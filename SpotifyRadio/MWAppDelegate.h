@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Playlist.h"
 #import "CocoaLibSpotify/CocoaLibSpotify.h"
 
 @interface MWAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, NSAlertDelegate> {
@@ -19,9 +20,13 @@
     IBOutlet NSTextField *getStartedLabel;
     IBOutlet NSTextField *artistInput;
     IBOutlet NSButton *letsGoButton;
+
+    Playlist *_sharedPlaylist;
 }
 
 - (IBAction)didPressLoginButton:(id)sender;
+- (IBAction)didPressSearchButton:(id)sender;
+
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode;
 
 - (void)hideAllLoginElements;

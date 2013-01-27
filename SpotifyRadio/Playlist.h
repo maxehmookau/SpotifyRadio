@@ -8,13 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Playlist : NSObject
+@interface Playlist : NSObject <NSURLConnectionDataDelegate>
 {
     NSString *seedArtist;
-    NSDictionary *playlist;
+    
+    // Just an array of strings containing Spotify track IDs
+    NSArray *playlist;
+    NSURLConnection *echonestConnection;
+    NSMutableData *scratchData;
 }
 
 - (id)initWithArtist:(NSString *)anArtist;
+- (void)startConnection;
 
 @property (assign) NSArray *playlist;
 @end

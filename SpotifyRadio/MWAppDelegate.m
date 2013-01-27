@@ -8,6 +8,7 @@
 
 #import "MWAppDelegate.h"
 #include "appkey.h"
+#import "Playlist.h"
 
 @implementation MWAppDelegate
 
@@ -21,6 +22,12 @@
     }else{
         NSLog(@"Everything is not ok");
     }
+}
+
+- (void)didPressSearchButton:(id)sender
+{
+    _sharedPlaylist = [[Playlist alloc] initWithArtist:[artistInput stringValue]];
+    [_sharedPlaylist startConnection];
 }
 
 - (void)didPressLoginButton:(id)sender
