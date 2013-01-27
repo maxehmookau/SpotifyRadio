@@ -10,9 +10,10 @@
 
 @implementation Playlist
 
-- (id)initWithArtist:(NSString *)anArtist
+- (id)initWithArtist:(NSString *)anArtist delegate:(id<PlaylistDelegate>)aDelegate;
 {
     seedArtist = anArtist;
+    delegate = aDelegate;
     return [super init];
 }
 
@@ -34,8 +35,23 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"%@", [[NSString alloc] initWithData:scratchData encoding:NSUTF8StringEncoding]);
+    //NSLog(@"%@", [[NSString alloc] initWithData:scratchData encoding:NSUTF8StringEncoding]);
     NSLog(@"Finished connection");
+    [self processResults];
+}
+
+- (void)processResults
+{    
+    NSDictionary *serial = [NSJSONSerialization JSONObjectWithData:scratchData options:NSJSONReadingAllowFragments error:nil];
+    NSArray *songs = [[serial objectForKey:@"response"] objectForKey:@"songs"];
+    //NSLog(@"%@", tracks);
+    _playlist = [[NSMutableArray alloc] init];
+    for (NSDictionary *song in songs) {
+        NSString *firstTrackID = [[[[song objectForKey:@"tracks"] objectAtIndex:0] valueForKey:@"foreign_id"] substringFromIndex:17];
+        [_playlist addObject:firstTrackID];
+    }
+    NSLog(@"Done processing");
+    [delegate didFinishGettingPlaylist];
 }
 
 @end

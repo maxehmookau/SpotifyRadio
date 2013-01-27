@@ -10,7 +10,7 @@
 #import "Playlist.h"
 #import "CocoaLibSpotify/CocoaLibSpotify.h"
 
-@interface MWAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, NSAlertDelegate> {
+@interface MWAppDelegate : NSObject <NSApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, NSAlertDelegate, PlaylistDelegate> {
     SPSession *_mainSession;
     IBOutlet NSTextField *usernameInput;
     IBOutlet NSTextField *passwordInput;

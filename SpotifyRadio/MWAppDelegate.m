@@ -26,8 +26,18 @@
 
 - (void)didPressSearchButton:(id)sender
 {
-    _sharedPlaylist = [[Playlist alloc] initWithArtist:[artistInput stringValue]];
+    [progressIndicator setHidden:NO];
+    [progressIndicator startAnimation:self];
+    _sharedPlaylist = [[Playlist alloc] initWithArtist:[artistInput stringValue] delegate:self];
     [_sharedPlaylist startConnection];
+}
+
+- (void)didFinishGettingPlaylist
+{
+    [progressIndicator setHidden:YES];
+    [progressIndicator stopAnimation:self];
+    NSLog(@"Got playlist");
+    NSLog(@"%@", [_sharedPlaylist playlist]);
 }
 
 - (void)didPressLoginButton:(id)sender
