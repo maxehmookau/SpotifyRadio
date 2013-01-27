@@ -7,15 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D006B8116B5749700A5EF0B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8016B5749700A5EF0B /* CFNetwork.framework */; };
+		4D006B8316B5749E00A5EF0B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8216B5749E00A5EF0B /* SystemConfiguration.framework */; };
+		4D006B8516B574A500A5EF0B /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8416B574A500A5EF0B /* libstdc++.dylib */; };
+		4D006B8716B574B200A5EF0B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8616B574B200A5EF0B /* CoreAudio.framework */; };
+		4D006B8916B574B600A5EF0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8816B574B600A5EF0B /* AudioToolbox.framework */; };
 		4D134D7E16B55CA2006AF954 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D134D7D16B55CA2006AF954 /* Cocoa.framework */; };
 		4D134D8816B55CA2006AF954 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D134D8616B55CA2006AF954 /* InfoPlist.strings */; };
 		4D134D8A16B55CA2006AF954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D134D8916B55CA2006AF954 /* main.m */; };
 		4D134D8E16B55CA2006AF954 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4D134D8C16B55CA2006AF954 /* Credits.rtf */; };
-		4D134D9116B55CA2006AF954 /* MWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D134D9016B55CA2006AF954 /* MWAppDelegate.m */; };
 		4D134D9416B55CA3006AF954 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D134D9216B55CA2006AF954 /* MainMenu.xib */; };
+		4D134DB716B55DA7006AF954 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D134DB416B55D98006AF954 /* CocoaLibSpotify.framework */; };
+		4D2362F516B56B5F008EE02B /* MWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D134D9016B55CA2006AF954 /* MWAppDelegate.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4D134DB316B55D98006AF954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D134DAA16B55D98006AF954 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 503D630F13258041007772CA;
+			remoteInfo = CocoaLibSpotify;
+		};
+		4D134DB516B55D98006AF954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D134DAA16B55D98006AF954 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 504E4934155AA85400E1C0F7;
+			remoteInfo = CocoaLSTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		4D006B8016B5749700A5EF0B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4D006B8216B5749E00A5EF0B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D006B8416B574A500A5EF0B /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		4D006B8616B574B200A5EF0B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		4D006B8816B574B600A5EF0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4D134D7916B55CA2006AF954 /* SpotifyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D134D7D16B55CA2006AF954 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4D134D8016B55CA2006AF954 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -29,6 +57,9 @@
 		4D134D8F16B55CA2006AF954 /* MWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWAppDelegate.h; sourceTree = "<group>"; };
 		4D134D9016B55CA2006AF954 /* MWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWAppDelegate.m; sourceTree = "<group>"; };
 		4D134D9316B55CA2006AF954 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4D134D9A16B55D26006AF954 /* SpotifyRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SpotifyRadio.entitlements; sourceTree = "<group>"; };
+		4D134DAA16B55D98006AF954 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "../../cocoalibspotify/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
+		4D2362E816B55F41008EE02B /* appkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appkey.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +67,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D006B8916B574B600A5EF0B /* AudioToolbox.framework in Frameworks */,
+				4D006B8716B574B200A5EF0B /* CoreAudio.framework in Frameworks */,
+				4D006B8516B574A500A5EF0B /* libstdc++.dylib in Frameworks */,
+				4D006B8316B5749E00A5EF0B /* SystemConfiguration.framework in Frameworks */,
+				4D006B8116B5749700A5EF0B /* CFNetwork.framework in Frameworks */,
+				4D134DB716B55DA7006AF954 /* CocoaLibSpotify.framework in Frameworks */,
 				4D134D7E16B55CA2006AF954 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +83,12 @@
 		4D134D6E16B55CA2006AF954 = {
 			isa = PBXGroup;
 			children = (
+				4D006B8816B574B600A5EF0B /* AudioToolbox.framework */,
+				4D006B8616B574B200A5EF0B /* CoreAudio.framework */,
+				4D006B8416B574A500A5EF0B /* libstdc++.dylib */,
+				4D006B8216B5749E00A5EF0B /* SystemConfiguration.framework */,
+				4D006B8016B5749700A5EF0B /* CFNetwork.framework */,
+				4D134DAA16B55D98006AF954 /* CocoaLibSpotify Mac Framework.xcodeproj */,
 				4D134D8316B55CA2006AF954 /* SpotifyRadio */,
 				4D134D7C16B55CA2006AF954 /* Frameworks */,
 				4D134D7A16B55CA2006AF954 /* Products */,
@@ -82,6 +125,7 @@
 		4D134D8316B55CA2006AF954 /* SpotifyRadio */ = {
 			isa = PBXGroup;
 			children = (
+				4D134D9A16B55D26006AF954 /* SpotifyRadio.entitlements */,
 				4D134D8F16B55CA2006AF954 /* MWAppDelegate.h */,
 				4D134D9016B55CA2006AF954 /* MWAppDelegate.m */,
 				4D134D9216B55CA2006AF954 /* MainMenu.xib */,
@@ -98,8 +142,18 @@
 				4D134D8916B55CA2006AF954 /* main.m */,
 				4D134D8B16B55CA2006AF954 /* SpotifyRadio-Prefix.pch */,
 				4D134D8C16B55CA2006AF954 /* Credits.rtf */,
+				4D2362E816B55F41008EE02B /* appkey.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D134DAB16B55D98006AF954 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D134DB416B55D98006AF954 /* CocoaLibSpotify.framework */,
+				4D134DB616B55D98006AF954 /* CocoaLSTests.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,12 +196,35 @@
 			mainGroup = 4D134D6E16B55CA2006AF954;
 			productRefGroup = 4D134D7A16B55CA2006AF954 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4D134DAB16B55D98006AF954 /* Products */;
+					ProjectRef = 4D134DAA16B55D98006AF954 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4D134D7816B55CA2006AF954 /* SpotifyRadio */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4D134DB416B55D98006AF954 /* CocoaLibSpotify.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLibSpotify.framework;
+			remoteRef = 4D134DB316B55D98006AF954 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4D134DB616B55D98006AF954 /* CocoaLSTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CocoaLSTests.app;
+			remoteRef = 4D134DB516B55D98006AF954 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4D134D7716B55CA2006AF954 /* Resources */ = {
@@ -167,8 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2362F516B56B5F008EE02B /* MWAppDelegate.m in Sources */,
 				4D134D8A16B55CA2006AF954 /* main.m in Sources */,
-				4D134D9116B55CA2006AF954 /* MWAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,10 +335,20 @@
 		4D134D9816B55CA3006AF954 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					$CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpotifyRadio/SpotifyRadio-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"/Users/maxwoolf/Documents/cocoalibspotify\"";
 				INFOPLIST_FILE = "SpotifyRadio/SpotifyRadio-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -270,10 +357,19 @@
 		4D134D9916B55CA3006AF954 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					$CONFIGURATION_BUILD_DIR/CocoaLibSpotify.framework/Versions/Frameworks,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpotifyRadio/SpotifyRadio-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"/Users/maxwoolf/Documents/cocoalibspotify\"";
 				INFOPLIST_FILE = "SpotifyRadio/SpotifyRadio-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,6 +394,7 @@
 				4D134D9916B55CA3006AF954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
