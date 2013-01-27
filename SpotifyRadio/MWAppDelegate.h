@@ -15,10 +15,19 @@
     IBOutlet NSTextField *passwordInput;
     IBOutlet NSProgressIndicator *progressIndicator;
     IBOutlet NSButton *loginButton;
+    
+    IBOutlet NSTextField *getStartedLabel;
+    IBOutlet NSTextField *artistInput;
+    IBOutlet NSButton *letsGoButton;
 }
 
 - (IBAction)didPressLoginButton:(id)sender;
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode;
+
+- (void)hideAllLoginElements;
+- (void)showAllLoginElements;
+
+- (void)showArtistInputElements;
 
 @property (assign) IBOutlet NSWindow *window;
 

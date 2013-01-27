@@ -36,23 +36,48 @@
     [[SPSession sharedSession] setDelegate:self];
     [[SPSession sharedSession] attemptLoginWithUserName:username password:password];
     
+    
     [[SPSession sharedSession] setPlaybackDelegate:self];
 
 }
 
-- (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
-{
-    NSLog(@"CREDENTIALS: %@", credential);
-}
-
-- (void)sessionDidLoginSuccessfully:(SPSession *)aSession
+- (void)hideAllLoginElements
 {
     [progressIndicator setHidden:YES];
     [progressIndicator stopAnimation:self];
     [usernameInput setHidden:YES];
     [passwordInput setHidden:YES];
     [loginButton setHidden:YES];
+}
+
+- (void)showAllLoginElements
+{
+    [progressIndicator setHidden:NO];
+    [usernameInput setHidden:NO];
+    [passwordInput setHidden:NO];
+    [loginButton setHidden:NO];
+}
+
+- (void)showArtistInputElements
+{
+    [getStartedLabel setHidden:NO];
+    [artistInput setHidden:NO];
+    [letsGoButton setHidden:NO];
+}
+
+- (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
+{
+    NSLog(@"CREDENTIALS: %@", credential);
+    [[NSUserDefaults standardUserDefaults] setValue:credential forKey:@"credential"];
+    [[NSUserDefaults standardUserDefaults] setValue:[usernameInput stringValue] forKey:@"username"];
+}
+
+- (void)sessionDidLoginSuccessfully:(SPSession *)aSession
+{
+    
+    [self hideAllLoginElements];
     NSLog(@"Logged in successfully");
+    [self showArtistInputElements];
 }
 
 - (void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error

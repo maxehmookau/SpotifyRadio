@@ -12,6 +12,7 @@
 		4D006B8516B574A500A5EF0B /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8416B574A500A5EF0B /* libstdc++.dylib */; };
 		4D006B8716B574B200A5EF0B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8616B574B200A5EF0B /* CoreAudio.framework */; };
 		4D006B8916B574B600A5EF0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8816B574B600A5EF0B /* AudioToolbox.framework */; };
+		4D006B9316B582FD00A5EF0B /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D006B9216B582FD00A5EF0B /* Playlist.m */; };
 		4D134D7E16B55CA2006AF954 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D134D7D16B55CA2006AF954 /* Cocoa.framework */; };
 		4D134D8816B55CA2006AF954 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D134D8616B55CA2006AF954 /* InfoPlist.strings */; };
 		4D134D8A16B55CA2006AF954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D134D8916B55CA2006AF954 /* main.m */; };
@@ -44,6 +45,8 @@
 		4D006B8416B574A500A5EF0B /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		4D006B8616B574B200A5EF0B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		4D006B8816B574B600A5EF0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4D006B9116B582FD00A5EF0B /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
+		4D006B9216B582FD00A5EF0B /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
 		4D134D7916B55CA2006AF954 /* SpotifyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D134D7D16B55CA2006AF954 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4D134D8016B55CA2006AF954 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				4D134D9016B55CA2006AF954 /* MWAppDelegate.m */,
 				4D134D9216B55CA2006AF954 /* MainMenu.xib */,
 				4D134D8416B55CA2006AF954 /* Supporting Files */,
+				4D006B9116B582FD00A5EF0B /* Playlist.h */,
+				4D006B9216B582FD00A5EF0B /* Playlist.m */,
 			);
 			path = SpotifyRadio;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			files = (
 				4D2362F516B56B5F008EE02B /* MWAppDelegate.m in Sources */,
 				4D134D8A16B55CA2006AF954 /* main.m in Sources */,
+				4D006B9316B582FD00A5EF0B /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
