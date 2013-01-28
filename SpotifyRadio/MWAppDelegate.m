@@ -24,6 +24,7 @@
     }
 }
 
+
 - (void)didPressSearchButton:(id)sender
 {
     [progressIndicator setHidden:NO];
@@ -38,6 +39,12 @@
     [progressIndicator stopAnimation:self];
     NSLog(@"Got playlist");
     NSLog(@"%@", [_sharedPlaylist playlist]);
+    [self hideArtistInputElements];
+    [albumArt setHidden:NO];
+    
+    _manager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
+    [_manager playTrack:[[_sharedPlaylist playlist] objectAtIndex:0] callback:nil];
+    
 }
 
 - (void)didPressLoginButton:(id)sender
@@ -80,6 +87,13 @@
     [getStartedLabel setHidden:NO];
     [artistInput setHidden:NO];
     [letsGoButton setHidden:NO];
+}
+
+- (void)hideArtistInputElements
+{
+    [getStartedLabel setHidden:YES];
+    [artistInput setHidden:YES];
+    [letsGoButton setHidden:YES];
 }
 
 - (void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName

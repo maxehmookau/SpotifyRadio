@@ -20,8 +20,12 @@
     IBOutlet NSTextField *getStartedLabel;
     IBOutlet NSTextField *artistInput;
     IBOutlet NSButton *letsGoButton;
+    
+    IBOutlet NSImageView *albumArt;
 
     Playlist *_sharedPlaylist;
+    
+    SPPlaybackManager *_manager;
 }
 
 - (IBAction)didPressLoginButton:(id)sender;
@@ -33,6 +37,7 @@
 - (void)showAllLoginElements;
 
 - (void)showArtistInputElements;
+- (void)hideArtistInputElements;
 
 @property (assign) IBOutlet NSWindow *window;
 

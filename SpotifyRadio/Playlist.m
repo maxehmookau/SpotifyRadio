@@ -7,6 +7,7 @@
 //
 
 #import "Playlist.h"
+#import <CocoaLibSpotify/CocoaLibSpotify.h>
 
 @implementation Playlist
 
@@ -35,7 +36,6 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    //NSLog(@"%@", [[NSString alloc] initWithData:scratchData encoding:NSUTF8StringEncoding]);
     NSLog(@"Finished connection");
     [self processResults];
 }
@@ -48,10 +48,23 @@
     _playlist = [[NSMutableArray alloc] init];
     for (NSDictionary *song in songs) {
         NSString *firstTrackID = [[[[song objectForKey:@"tracks"] objectAtIndex:0] valueForKey:@"foreign_id"] substringFromIndex:17];
-        [_playlist addObject:firstTrackID];
+        NSURL *spotifyURL = [NSURL URLWithString:[NSString stringWithFormat:@"spotify:track:%@", firstTrackID]];
+        [SPTrack trackForTrackURL:spotifyURL inSession:[SPSession sharedSession] callback:^
+         (SPTrack *track){
+             [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+                 NSLog(@"Loaded: %@", [loadedItems lastObject]);
+                 NSLog(@"%lu", [_playlist count]);
+                 [_playlist addObject:track];
+                 if ([_playlist count] == 10) { // 10 enough to get started.
+                     [delegate didFinishGettingPlaylist]; // So let the delegate know
+                 }
+             }];
+        }];
     }
     NSLog(@"Done processing");
-    [delegate didFinishGettingPlaylist];
+
+    
+    
 }
 
 @end

@@ -13,6 +13,7 @@
 		4D006B8716B574B200A5EF0B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8616B574B200A5EF0B /* CoreAudio.framework */; };
 		4D006B8916B574B600A5EF0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D006B8816B574B600A5EF0B /* AudioToolbox.framework */; };
 		4D006B9316B582FD00A5EF0B /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D006B9216B582FD00A5EF0B /* Playlist.m */; };
+		4D006B9516B59D1400A5EF0B /* EN_P_on_Light_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D006B9416B59D1400A5EF0B /* EN_P_on_Light_Transparent.png */; };
 		4D134D7E16B55CA2006AF954 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D134D7D16B55CA2006AF954 /* Cocoa.framework */; };
 		4D134D8816B55CA2006AF954 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D134D8616B55CA2006AF954 /* InfoPlist.strings */; };
 		4D134D8A16B55CA2006AF954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D134D8916B55CA2006AF954 /* main.m */; };
@@ -47,6 +48,7 @@
 		4D006B8816B574B600A5EF0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4D006B9116B582FD00A5EF0B /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
 		4D006B9216B582FD00A5EF0B /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		4D006B9416B59D1400A5EF0B /* EN_P_on_Light_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EN_P_on_Light_Transparent.png; sourceTree = "<group>"; };
 		4D134D7916B55CA2006AF954 /* SpotifyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D134D7D16B55CA2006AF954 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4D134D8016B55CA2006AF954 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -86,6 +88,7 @@
 		4D134D6E16B55CA2006AF954 = {
 			isa = PBXGroup;
 			children = (
+				4D006B9416B59D1400A5EF0B /* EN_P_on_Light_Transparent.png */,
 				4D006B8816B574B600A5EF0B /* AudioToolbox.framework */,
 				4D006B8616B574B200A5EF0B /* CoreAudio.framework */,
 				4D006B8416B574A500A5EF0B /* libstdc++.dylib */,
@@ -239,6 +242,7 @@
 				4D134D8816B55CA2006AF954 /* InfoPlist.strings in Resources */,
 				4D134D8E16B55CA2006AF954 /* Credits.rtf in Resources */,
 				4D134D9416B55CA3006AF954 /* MainMenu.xib in Resources */,
+				4D006B9516B59D1400A5EF0B /* EN_P_on_Light_Transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
