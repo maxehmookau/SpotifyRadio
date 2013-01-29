@@ -15,7 +15,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSError *mainError = nil;
-    
+    [self hideTrackControls];
     if([SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size] userAgent:@"MaxWoolf.SpotifyRadio" loadingPolicy:SPAsyncLoadingManual error:&mainError])
     {
         NSLog(@"Created fine");
@@ -31,20 +31,66 @@
     [progressIndicator startAnimation:self];
     _sharedPlaylist = [[Playlist alloc] initWithArtist:[artistInput stringValue] delegate:self];
     [_sharedPlaylist startConnection];
+    
 }
 
 - (void)didFinishGettingPlaylist
 {
+    currentTrack = 0;
     [progressIndicator setHidden:YES];
     [progressIndicator stopAnimation:self];
+    [self showTrackControls];
     NSLog(@"Got playlist");
     NSLog(@"%@", [_sharedPlaylist playlist]);
     [self hideArtistInputElements];
     [albumArt setHidden:NO];
     
     _manager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
-    [_manager playTrack:[[_sharedPlaylist playlist] objectAtIndex:0] callback:nil];
+    [_manager playTrack:[[_sharedPlaylist playlist] objectAtIndex:currentTrack] callback:nil];
+    [self updateAlbumCover];
     
+}
+
+- (void)showTrackControls
+{
+    [nextTrackButton setHidden:NO];
+    [prevTrackButton setHidden:NO];
+    [artistLabel setHidden:NO];
+    [titleLabel setHidden:NO];
+}
+
+- (void)hideTrackControls
+{
+    [nextTrackButton setHidden:YES];
+    [nextTrackButton setHidden:YES];
+    [artistLabel setHidden:YES];
+    [titleLabel setHidden:YES];
+}
+
+- (void)updateAlbumCover
+{
+    SPAlbum *currentAlbum = [(SPTrack *)[[_sharedPlaylist playlist] objectAtIndex:currentTrack]album];
+    [SPAsyncLoading waitUntilLoaded:[currentAlbum cover] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
+        [albumArt setImage:[[currentAlbum cover] image]];
+    }];
+    
+    SPTrack *track = (SPTrack *)[[_sharedPlaylist playlist] objectAtIndex:currentTrack];
+    [titleLabel setStringValue:[track name]];
+    [artistLabel setStringValue:[(SPArtist *)[[track artists] objectAtIndex:0] name]];
+}
+
+- (void)didPressNextTrack:(id)sender
+{
+    currentTrack += 1;
+    [self updateAlbumCover];
+    [_manager playTrack:[[_sharedPlaylist playlist] objectAtIndex:currentTrack+1] callback:nil];
+}
+
+- (void)didPressPrevTrack:(id)sender
+{
+    currentTrack -= 1;
+    [self updateAlbumCover];
+    [_manager playTrack:[[_sharedPlaylist playlist] objectAtIndex:currentTrack-1] callback:nil];
 }
 
 - (void)didPressLoginButton:(id)sender

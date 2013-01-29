@@ -20,7 +20,8 @@
     NSString *seedArtist;
     
     // Just an array of strings containing Spotify track IDs
-    NSMutableArray *playlist;
+    NSMutableArray *_playlist;
+    NSMutableArray *_albumCovers;
     NSURLConnection *echonestConnection;
     NSMutableData *scratchData;
     
@@ -32,6 +33,7 @@
 - (void)processResults;
 
 @property (nonatomic) NSMutableArray *playlist;
+@property (nonatomic) NSMutableArray *albumCovers;
 @property (nonatomic) id delegate;
 
 @end

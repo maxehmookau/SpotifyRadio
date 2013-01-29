@@ -21,15 +21,25 @@
     IBOutlet NSTextField *artistInput;
     IBOutlet NSButton *letsGoButton;
     
+    IBOutlet NSButton *nextTrackButton;
+    IBOutlet NSButton *prevTrackButton;
+    
     IBOutlet NSImageView *albumArt;
+    IBOutlet NSTextField *artistLabel;
+    IBOutlet NSTextField *titleLabel;
 
     Playlist *_sharedPlaylist;
     
     SPPlaybackManager *_manager;
+    
+    int currentTrack;
 }
 
 - (IBAction)didPressLoginButton:(id)sender;
 - (IBAction)didPressSearchButton:(id)sender;
+
+- (IBAction)didPressPrevTrack:(id)sender;
+- (IBAction)didPressNextTrack:(id)sender;
 
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode;
 
@@ -38,6 +48,11 @@
 
 - (void)showArtistInputElements;
 - (void)hideArtistInputElements;
+
+- (void)hideTrackControls;
+- (void)showTrackControls;
+
+- (void)updateAlbumCover;
 
 @property (assign) IBOutlet NSWindow *window;
 

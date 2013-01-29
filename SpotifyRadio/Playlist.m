@@ -20,7 +20,7 @@
 
 - (void)startConnection
 {
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://developer.echonest.com/api/v4/playlist/basic?api_key=FILDTEOIK2HBORODV&artist=%@&limit=true&format=json&results=100&bucket=id:spotify-WW&bucket=tracks&type=artist-radio", seedArtist]]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://developer.echonest.com/api/v4/playlist/basic?api_key=FILDTEOIK2HBORODV&artist=%@&limit=true&format=json&results=10&bucket=id:spotify-WW&bucket=tracks&type=artist-radio", seedArtist]]];
     echonestConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 }
 
@@ -46,11 +46,11 @@
     NSArray *songs = [[serial objectForKey:@"response"] objectForKey:@"songs"];
     //NSLog(@"%@", tracks);
     _playlist = [[NSMutableArray alloc] init];
+    _albumCovers = [[NSMutableArray alloc] init];
     for (NSDictionary *song in songs) {
         NSString *firstTrackID = [[[[song objectForKey:@"tracks"] objectAtIndex:0] valueForKey:@"foreign_id"] substringFromIndex:17];
         NSURL *spotifyURL = [NSURL URLWithString:[NSString stringWithFormat:@"spotify:track:%@", firstTrackID]];
-        [SPTrack trackForTrackURL:spotifyURL inSession:[SPSession sharedSession] callback:^
-         (SPTrack *track){
+        [SPTrack trackForTrackURL:spotifyURL inSession:[SPSession sharedSession] callback:^(SPTrack *track){
              [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
                  NSLog(@"Loaded: %@", [loadedItems lastObject]);
                  NSLog(@"%lu", [_playlist count]);
@@ -58,6 +58,7 @@
                  if ([_playlist count] == 10) { // 10 enough to get started.
                      [delegate didFinishGettingPlaylist]; // So let the delegate know
                  }
+                 
              }];
         }];
     }
